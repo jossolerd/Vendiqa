@@ -33,7 +33,7 @@ graph LR
             Landing[/landing: Crudo intacto/]
             Bronze[/bronze: Tablas crudas/]
             Silver[/"silver: Limpio y Validado<br/>(Apache Iceberg)"/]
-            Gold[/gold: Modelo Estrella<br/>fact_sales + 5 dims (Iceberg)/]
+            Gold[/"gold: Modelo Estrella<br/>fact_sales + 5 dims (Iceberg)"/]
         end
 
         Crawler[AWS Glue Crawler]

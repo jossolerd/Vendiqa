@@ -28,7 +28,7 @@ graph LR
         Script[Script Python Faker<br/>7M registros CSV/Parquet]
     end
 
-    subgraph AWS Cloud us-east-1
+    subgraph AWS[AWS Cloud]
         subgraph S3[Lakehouse Vendiqa - Amazon S3]
             Landing[/landing: Crudo intacto/]
             Bronze[/bronze: Tablas crudas/]
@@ -53,7 +53,7 @@ graph LR
         Budget[AWS Budgets: Alerta < 5 USD]
     end
 
-    Script -->|Carga inicial| Landing
+    Script -->|Carga| Landing
     Landing -->|Detecta esquema| Crawler
     Crawler -->|Registra| Catalog
     
@@ -73,8 +73,8 @@ graph LR
     TF -.- S3
     TF -.- StepFunc
     TF -.- Athena
-    IAM -.- AWS Cloud
-    Budget -.- AWS Cloud
+    IAM -.- AWS
+    Budget -.- AWS
 
     classDef aws fill:#FF9900,stroke:#333,stroke-width:2px,color:white;
     classDef iceberg fill:#E6522C,stroke:#333,stroke-width:2px,color:white;
